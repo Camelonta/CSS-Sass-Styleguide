@@ -138,10 +138,10 @@ We recommend a variant of BEM with hyphen-separated-lowercase “blocks”.
 
 ```html
 <div class="listing-card">
-<h1 class="listing-card__title>Nice day in Stockholm, eh?</h1>
-<div class="listing-card__content">
-  <p>With an average temperature of -35°c the Swedes are rushing to get the best spot at the beach. Firing up the ol' grill and eating loads of ice cream</p>
-    </div>
+  <h1 class="listing-card__title>Nice day in Stockholm, eh?</h1>
+  <div class="listing-card__content">
+    <p>With an average temperature of -35°c the Swedes are rushing to get the best spot at the beach. While having a fika, eating surströmming and shopping at Ikea inbetween.</p>
+  </div>
   <a href="#" class="listing-card__link">Read more</a>
 </div>
 ```
