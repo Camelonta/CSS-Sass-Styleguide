@@ -120,7 +120,6 @@ We encourage some combinations of BEM, ITCSS and Atomic design for these reasons
   * It allows for less nesting and lower specificity
   * It helps in building scalable stylesheets
 
-[Putting it together with Atomic, ITCSS & BEM](https://www.silverstripe.org/blog/better-css-putting-it-together-with-atomic-itcss-and-bem/)
 
 **Atomic design** is a methodology for creating design systems. 
 
@@ -128,7 +127,8 @@ We encourage some combinations of BEM, ITCSS and Atomic design for these reasons
   * [Post by Brad Frost](http://bradfrost.com/blog/post/atomic-web-design/)
   * A CSS Architecture Worth Loving [BEM & Atomic](https://www.lullabot.com/articles/bem-atomic-design-a-css-architecture-worth-loving)
   
-  **ITCSS** is a scalable and maintainable css architecture
+  
+**ITCSS** is a scalable and maintainable css architecture
 
   * [What is ITCSS?](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
   
@@ -163,6 +163,10 @@ We recommend a variant of BEM with hyphen-separated-lowercase “blocks”.
   * `.listing-card` is the “block” and represents the higher-level component
   * `.listing-card__title` is an “element” and represents a descendant of `.listing-card` that helps compose the block as a whole.
   * `.listing-card--featured` is a “modifier” and represents a different state or variation on the `.listing-card` block.
+
+
+[Putting it together with Atomic, ITCSS & BEM](https://www.silverstripe.org/blog/better-css-putting-it-together-with-atomic-itcss-and-bem/)
+
 
 ### ID selectors
 
