@@ -11,7 +11,7 @@ A slightly modified version of the styleguide from [Airbnb](https://github.com/a
   1. [CSS](#css)
     - [Formatting](#formatting)
     - [Comments](#comments)
-    - [OOCSS and BEM](#oocss-and-bem)
+    - [Atomic Design, ITCSS, BEM](#Atomic-Design-ITCSS-BEM)
     - [ID Selectors](#id-selectors)
     - [Border](#border)
   1. [Sass](#sass)
@@ -22,7 +22,7 @@ A slightly modified version of the styleguide from [Airbnb](https://github.com/a
     - [Mixins](#mixins)
     - [Extend directive](#extend-directive)
     - [Nested selectors](#nested-selectors)
-  1. [Translation](#translation)
+    - [Media queries](#media-queries)
 
 ## Terminology
 
@@ -67,7 +67,7 @@ Finally, properties are what give the selected elements of a rule declaration th
 ### Formatting
 
 * Prefer dashes over camelCasing in class names.
-  - Underscores are okay if you are using BEM (see [OOCSS and BEM](#oocss-and-bem) below).
+  - Underscores are okay if you are using BEM
 * Do not use ID selectors
 * When using multiple selectors in a rule declaration, give each selector its own line.
 * Put a space before the opening brace `{` in rule declarations
@@ -112,19 +112,26 @@ Finally, properties are what give the selected elements of a rule declaration th
   - Uses of z-index
   - Compatibility or browser-specific hacks
 
-### OOCSS and BEM
+### Atomic Design, ITCSS, BEM
 
-We encourage some combination of OOCSS and BEM for these reasons:
+We encourage some combinations of BEM, ITCSS and Atomic design for these reasons:
 
   * It helps create clear, strict relationships between CSS and HTML
-  * It helps us create reusable, composable components
   * It allows for less nesting and lower specificity
   * It helps in building scalable stylesheets
 
-**OOCSS**, or “Object Oriented CSS”, is an approach for writing CSS that encourages you to think about your stylesheets as a collection of “objects”: reusable, repeatable snippets that can be used independently throughout a website.
+[Putting it together with Atomic, ITCSS & BEM](https://www.silverstripe.org/blog/better-css-putting-it-together-with-atomic-itcss-and-bem/)
 
-  * Nicole Sullivan's [OOCSS wiki](https://github.com/stubbornella/oocss/wiki)
-  * Smashing Magazine's [Introduction to OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
+**Atomic design** is a methodology for creating design systems. 
+
+  * Short demo of Atomic design [Play video](http://patternlab.io/assets/atomic-design.mp4)
+  * [Post by Brad Frost](http://bradfrost.com/blog/post/atomic-web-design/)
+  * A CSS Architecture Worth Loving [BEM & Atomic](https://www.lullabot.com/articles/bem-atomic-design-a-css-architecture-worth-loving)
+  
+  **ITCSS** is a scalable and maintainable css architecture
+
+  * [What is ITCSS?](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
+  
 
 **BEM**, or “Block-Element-Modifier”, is a _naming convention_ for classes in HTML and CSS. It was originally developed by Yandex with large codebases and scalability in mind, and can serve as a solid set of guidelines for implementing OOCSS.
 
@@ -292,3 +299,39 @@ When selectors become this long, you're likely writing CSS that is:
 Again: **never nest ID selectors!**
 
 If you must use an ID selector in the first place (and you should really try not to), they should never be nested. If you find yourself doing this, you need to revisit your markup, or figure out why such strong specificity is needed. If you are writing well formed HTML and CSS, you should **never** need to do this.
+
+
+## Media queries
+Media queries for a specific component should be set in the component's file. 
+
+**Bad**
+
+```scss
+/* listing-card.scss */
+.listing-card {
+  float:left;
+}
+
+
+/* all-media-queries.scss */
+@media (max-width: 600px) {
+  .listing-card {
+    float:none;
+  }
+}
+```
+
+**Good**
+
+```scss
+/* listing-card.scss */
+.listing-card {
+  float:left;
+}
+
+@media (max-width: 600px) {
+  .listing-card {
+    float:none;
+  }
+}
+```
