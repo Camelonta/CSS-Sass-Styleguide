@@ -339,3 +339,7 @@ Media queries for a specific component should be set in the component's file.
   }
 }
 ```
+
+
+# Is CSS broken?
+CSS isn't broken. But it does require study and skill. It does require careful thought. As with anything in programming, you can make a mess of the code. Sure, blaming the language is the easy way out. But when your JavaScript is confusing and buggy, you know it’s not the language’s fault.
